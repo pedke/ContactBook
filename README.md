@@ -7,7 +7,7 @@ Suite of CRUD APIs for a contact book app. APIs support adding/editing/deleting 
 * [Apache Lucene](https://lucene.apache.org)
 * Tomcat 8.5
 * Angularjs (a minimal frontend not part of assignment)
-* Hosted on AWS (Amazon Linux EC2 instance)
+* Hosted on AWS (Amazon Linux EC2 instance http://ec2-54-162-251-126.compute-1.amazonaws.com])
 
 ### Searching :
 Search allows fuzzy search for name and email address separately.
@@ -20,12 +20,12 @@ For searching we have used [Apache Lucene](https://lucene.apache.org) which is h
 ### REST APIs :
 We have used Jersey frameork with json for REST APIs.
 All REST APIs are defined in [ContactBookService.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java).
-1. Added a new contact : API [/create](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L43-L80).
-2. Update existing contact : API [/update](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L86-L123).
-3. Read existing contact : API [/get](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L130-L160).
-4. Delete existing contact : API [/delete](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L168-L195).
-5. Search contact by name : API [/searchname](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L203-L241).
-6. Search contact by email : API [/searchemail](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L248-L287).
+1. Added a new contact : API [rest/ContactBookService/create](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L43-L80).
+2. Update existing contact : API [rest/ContactBookService/update](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L86-L123).
+3. Read existing contact : API [rest/ContactBookService/get](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L130-L160).
+4. Delete existing contact : API [rest/ContactBookService/delete](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L168-L195).
+5. Search contact by name : API [rest/ContactBookService/searchname](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L203-L241).
+6. Search contact by email : API [rest/ContactBookService/searchemail](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/service/ContactBookService.java#L248-L287).
 <br/>Request and Response json are defined in [package service](https://github.com/pedke/ContactBook/tree/master/ContactBookRestAPI/src/com/contactbook/service).
 
 ### Authentication :
@@ -55,4 +55,5 @@ JUnit tests are defined for all functionality
 For Lucene provides separate framework for testing search functionality extesively howwever in favour of time I have used simple JUnit.
 
 ### Frontend
-We have also included a minimal frontend to demonstrate use REST APIs. The Angularjs frontend is very basic with miminal error handling. This is not part of original assignment. 
+We have also included a minimal frontend to demonstrate use REST APIs. The Angularjs frontend is very basic with miminal error handling. This is not part of original assignment.
+Please look into [contact_app.js](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/WebContent/js/contact_app.js) to see format to call REST APIs with json.
