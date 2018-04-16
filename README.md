@@ -1,6 +1,14 @@
 # ContactBook
 Suite of CRUD APIs for a contact book app. APIs support adding/editing/deleting contacts
 
+### Tech Stack
+* Java 8
+* Jersy for REST API
+* [Apache Lucene](https://lucene.apache.org)
+* Tomcat 8.5
+* Angularjs (a minimal frontend not part of assignment)
+* Hosted on AWS (Amazon Linux EC2 instance)
+
 ### Searching :
 Search allows fuzzy search for name and email address separately.
 eg. Search for name  "Jon Snow" returns all contacts having name like "John Sno", "Jon Snow", "John Snow" etc.
@@ -37,11 +45,14 @@ See implemenation [ContactBookStoreHashTable.java](https://github.com/pedke/Cont
 Lucene maintains index for all contacts and provids search capability on email and name. For each operation in contact book search indexes are updated. It provides fuzzy search on name and email. We can easily change search strategy as Lucene provied different Analyzers and query capability like proxymity search.
 See implemenation [LuceneSearchProvider.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/com/contactbook/LuceneSearchProvider.java)
 
-## Tests
+### Tests
 JUnit tests are defined for all functionality
 1. [ContactBookAllTests.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/test/ContactBookAllTests.java)
 2. [ContactBookServiceTest.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/test/ContactBookServiceTest.java)
 3. [ContactBookStoreHashTableTest.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/test/ContactBookStoreHashTableTest.java)
 4. [ContactBookTest.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/test/ContactBookTest.java)
 5. [LuceneSearchProviderTest.java](https://github.com/pedke/ContactBook/blob/master/ContactBookRestAPI/src/test/LuceneSearchProviderTest.java)
-For Lucene provides separate framework for testing search functionality extesively howwever in favour of time I have used simple JUnit
+For Lucene provides separate framework for testing search functionality extesively howwever in favour of time I have used simple JUnit.
+
+### Frontend
+We have also included a minimal frontend to demonstrate use REST APIs. The Angularjs frontend is very basic with miminal error handling. This is not part of original assignment. 
