@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Book</title>
+</head>
+
+<script src="./js/angular.min.js"></script>
+<script src="./js/contact_app.js"></script>
+
+<body>
+	<div ng-app="contactBookApp" ng-controller="contactBookCtrl"
+		align="center">
+
+		<table border cellpadding="10">
+			<tr>
+				<th colspan="2"><h3>Contact Book</h3></th>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<br /> <input placeholder="Enter email address of new contact"
+							size="40" ng-model="createEmail" /> <br /> <br /> <input
+							placeholder="Enter name of new contact" size="40"
+							ng-model="createName" />
+						<button ng-click="createContact()">Create Contact</button>
+					</div>
+				</td>
+				<td>
+					<div>
+						<br /> <input
+							placeholder="Enter email address of contact to update" size="40"
+							ng-model="updateEmail" /> <br /> <br /> <input
+							placeholder="Enter name of contact to update" size="40"
+							ng-model="updateName" />
+						<button ng-click="updateContact()">Update Contact</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<input placeholder="Enter complete email address" size="40"
+							ng-model="getEmail" />
+						<button ng-click="getContact()">Get Contact</button>
+						<br />
+					</div>
+				</td>
+				<td>
+					<div>
+						<input placeholder="Enter email address to search" size="40"
+							ng-model="searchEmail" />
+						<button ng-click="searchByEmail(0)">Search by email</button>
+						<br /> <br /> <input placeholder="Enter name to search"
+							size="40" ng-model="searchName" />
+						<button ng-click="searchByName(0)">Search by Name</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div>
+						<table border cellpadding="10">
+							<tr>
+								<th>No.</th>
+								<th>Email</th>
+								<th>Name</th>
+							</tr>
+							<tr ng-repeat="contact in contactData">
+								<td>{{$index + nextPageStartIndex + 1 }}</td>
+								<td>{{contact.email}}</td>
+								<td>{{contact.name}}</td>
+								<td><button class="btn btn-default btn-xs"
+										ng-click="deleteContact(this.contact)">Delete</button></td>
+							</tr>
+						</table>
+						<br /> <span><button ng-click="clearSearchResults()">Clear
+								Search Results</button></span> <span><button ng-show="showNextPage"
+								ng-click="searchNextPage(nextPageStartIndex)">Next Page</button></span>
+
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
